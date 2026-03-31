@@ -118,6 +118,10 @@ nav{display:flex;border-bottom:1px solid var(--border);background:var(--bg);over
 nav::-webkit-scrollbar{display:none}
 .tab-btn{flex:1;min-width:65px;padding:10px 4px;background:none;border:none;color:var(--muted);font-family:Wallop,sans-serif;font-weight:300;font-size:16px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color 0.2s}
 .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+.drawer-item{display:flex;align-items:center;gap:14px;width:100%;padding:14px 20px;background:none;border:none;border-left:3px solid transparent;color:var(--text);font-family:Wallop,sans-serif;font-weight:300;font-size:16px;cursor:pointer;text-align:left;transition:background 0.15s}
+.drawer-item:active{background:var(--surface2)}
+.drawer-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(207,102,64,0.08);font-weight:600}
+.drawer-icon{font-size:20px;width:28px;flex-shrink:0}
 main{flex:1;overflow-y:auto;min-height:0;-webkit-overflow-scrolling:touch}
 .tab-panel{display:none;padding:16px}
 .tab-panel.active{display:block}
@@ -442,6 +446,15 @@ select option{background:var(--surface2)}
         <button class="drawer-item" id="drawer-cancelled" data-cancelled="true" onclick="switchTab('cancelled',this);closeDrawer()"><span class="drawer-icon">🕐</span><span>Past Shows</span></button>
     </div>
   </div>
+  <nav>
+    <button class="tab-btn active" id="tab-btn-shows" onclick="switchTab('shows',this)">Shows</button>
+    <button class="tab-btn" id="tab-btn-setlists" onclick="switchTab('setlists',this)">Sets</button>
+    <button class="tab-btn" id="tab-btn-members" onclick="switchTab('members',this)">Members</button>
+    <button class="tab-btn" id="tab-btn-network" onclick="switchTab('network',this)">Network</button>
+    <button class="tab-btn" id="tab-btn-content" onclick="switchTab('content',this)">Content</button>
+    <button class="tab-btn" id="tab-btn-discussion" onclick="switchTab('discussion',this)">Discussion</button>
+    <button class="tab-btn" id="tab-btn-cancelled" onclick="switchTab('cancelled',this)">Past Shows</button>
+  </nav>
   <main>
     <div class="tab-panel active" id="tab-shows">
       <div id="whoBanner"></div>
